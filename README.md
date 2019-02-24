@@ -6,7 +6,7 @@ Sitecore samples are located in
 * IdentityServer4.Samples/Clients/src/SitecoreMvcClient/
 * IdentityServer4.Samples/Clients/src/SitecoreApi/
 
-SitecoreApi requires Sitecore JSS Server Package insallation. More information [here](https://jss.sitecore.com/docs/getting-started/jss-server-install)
+SitecoreApi requires Sitecore JSS Server Package installation. More information [here](https://jss.sitecore.com/docs/getting-started/jss-server-install)
 
 Also requires to create API Key in Sitecore. More information [here](https://jss.sitecore.com/docs/getting-started/app-deployment)
 

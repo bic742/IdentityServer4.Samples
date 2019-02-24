@@ -53,6 +53,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleDeviceFlow", "src\Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleClientCredentialsFlowCallingIdentityServerApi", "src\ConsoleClientCredentialsFlowCallingIdentityServerApi\ConsoleClientCredentialsFlowCallingIdentityServerApi.csproj", "{141BD303-CD29-472F-B5D8-C1F28ED0621A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SitecoreMvcClient", "src\SitecoreMvcClient\SitecoreMvcClient.csproj", "{00AF5DA1-3B65-468E-8210-5025AD59C2E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SitecoreApi", "src\SitecoreApi\SitecoreApi.csproj", "{5567ED87-E0A3-4B6E-B5F2-CA09596D0679}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -147,6 +151,14 @@ Global
 		{141BD303-CD29-472F-B5D8-C1F28ED0621A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{141BD303-CD29-472F-B5D8-C1F28ED0621A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{141BD303-CD29-472F-B5D8-C1F28ED0621A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00AF5DA1-3B65-468E-8210-5025AD59C2E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00AF5DA1-3B65-468E-8210-5025AD59C2E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00AF5DA1-3B65-468E-8210-5025AD59C2E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00AF5DA1-3B65-468E-8210-5025AD59C2E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5567ED87-E0A3-4B6E-B5F2-CA09596D0679}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5567ED87-E0A3-4B6E-B5F2-CA09596D0679}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5567ED87-E0A3-4B6E-B5F2-CA09596D0679}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5567ED87-E0A3-4B6E-B5F2-CA09596D0679}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -175,6 +187,8 @@ Global
 		{241B0622-DECC-4723-BF04-F0DB02478DC7} = {187AC294-0420-4726-808B-ED49148C0632}
 		{879689CC-38F7-418F-9721-9D4158302B69} = {187AC294-0420-4726-808B-ED49148C0632}
 		{141BD303-CD29-472F-B5D8-C1F28ED0621A} = {187AC294-0420-4726-808B-ED49148C0632}
+		{00AF5DA1-3B65-468E-8210-5025AD59C2E4} = {187AC294-0420-4726-808B-ED49148C0632}
+		{5567ED87-E0A3-4B6E-B5F2-CA09596D0679} = {AFE7085F-051E-4829-955F-3426FE643BDD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BAD78470-3D66-466E-9C17-2A67F0905B18}

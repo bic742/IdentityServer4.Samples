@@ -6,11 +6,8 @@ using Microsoft.Extensions.Logging;
 using Sitecore.Framework.Runtime.Configuration;
 using Sitecore.Plugin.IdentityProvider.Ids4Demo.Configuration;
 using System;
-using System.IO;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.DataProtection;
-using Microsoft.IdentityModel.Tokens;
 
 namespace Sitecore.Plugin.IdentityProvider.Ids4Demo
 {

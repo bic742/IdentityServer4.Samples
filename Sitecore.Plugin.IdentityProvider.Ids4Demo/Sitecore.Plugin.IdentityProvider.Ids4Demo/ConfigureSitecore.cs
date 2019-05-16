@@ -36,6 +36,7 @@ namespace Sitecore.Plugin.IdentityProvider.Ids4Demo
                 options.ClientId = ids4DemoProvider.ClientId;
                 options.Authority = "https://demo.identityserver.io/";
                 options.MetadataAddress = ids4DemoProvider.MetadataAddress;
+                options.CallbackPath = "/signin-idsrv";
                 options.Events.OnRedirectToIdentityProvider += (Func<RedirectContext, Task>)(context =>
                 {
                     Claim first = context.HttpContext.User.FindFirst("idp");

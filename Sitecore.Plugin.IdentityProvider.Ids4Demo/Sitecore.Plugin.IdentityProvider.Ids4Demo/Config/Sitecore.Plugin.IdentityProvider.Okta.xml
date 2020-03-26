@@ -3,12 +3,14 @@
   <Sitecore>
     <ExternalIdentityProviders>
       <IdentityProviders>
-        <Ids4Demo type="Sitecore.Plugin.IdentityProviders.IdentityProvider, Sitecore.Plugin.IdentityProviders">
-          <AuthenticationScheme>IdS4-Ids4Demo</AuthenticationScheme>
-          <DisplayName>IdentityServer Demo Identity Provider</DisplayName>
+        <Okta type="Sitecore.Plugin.IdentityProviders.IdentityProvider, Sitecore.Plugin.IdentityProviders">
+          <AuthenticationScheme>IdS4-Okta</AuthenticationScheme>
+          <DisplayName>IdentityServer Okta Identity Provider</DisplayName>
           <Enabled>true</Enabled>
-          <ClientId>implicit</ClientId>
-          <MetadataAddress></MetadataAddress>
+          <ClientId></ClientId>
+          <ClientSecret></ClientSecret>
+          <Authority></Authority>
+          
           <ClaimsTransformations>
             <!--Place transformation rules here. -->
             <ClaimsTransformation1 type="Sitecore.Plugin.IdentityProviders.DefaultClaimsTransformation, Sitecore.Plugin.IdentityProviders">
@@ -28,7 +30,7 @@
               </NewClaims>
             </ClaimsTransformation2>
           </ClaimsTransformations>
-        </Ids4Demo>
+        </Okta>
       </IdentityProviders>
     </ExternalIdentityProviders>
   </Sitecore>

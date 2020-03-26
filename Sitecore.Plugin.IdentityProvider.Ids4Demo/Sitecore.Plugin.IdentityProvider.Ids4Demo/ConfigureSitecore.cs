@@ -6,7 +6,6 @@ using Microsoft.Extensions.Logging;
 using Sitecore.Framework.Runtime.Configuration;
 using Sitecore.Plugin.IdentityProvider.Ids4Demo.Configuration;
 using System;
-using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace Sitecore.Plugin.IdentityProvider.Ids4Demo
@@ -21,26 +20,26 @@ namespace Sitecore.Plugin.IdentityProvider.Ids4Demo
             this._logger = logger;
             this._appSettings = new AppSettings();
             scConfig.GetSection(AppSettings.SectionName);
-            scConfig.GetSection(AppSettings.SectionName).Bind((object)this._appSettings.Ids4DemoIdentityProvider);
+            scConfig.GetSection(AppSettings.SectionName).Bind((object)this._appSettings.OktaIdentityProvider);
         }
 
         public void ConfigureServices(IServiceCollection services)
         {
-            Ids4DemoIdentityProvider ids4DemoProvider = this._appSettings.Ids4DemoIdentityProvider;
-            if (!ids4DemoProvider.Enabled)
+            var oktaProvider = this._appSettings.OktaIdentityProvider;
+            if (!oktaProvider.Enabled)
                 return;
-            this._logger.LogDebug("Configure '" + ids4DemoProvider.DisplayName + "'. AuthenticationScheme = " + ids4DemoProvider.AuthenticationScheme + ", ClientId = " + ids4DemoProvider.ClientId, Array.Empty<object>());
-            new AuthenticationBuilder(services).AddOpenIdConnect(ids4DemoProvider.AuthenticationScheme, ids4DemoProvider.DisplayName, (Action<OpenIdConnectOptions>)(options =>
+            this._logger.LogDebug("Configure '" + oktaProvider.DisplayName + "'. AuthenticationScheme = " + oktaProvider.AuthenticationScheme + ", ClientId = " + oktaProvider.ClientId, Array.Empty<object>());
+            new AuthenticationBuilder(services).AddOpenIdConnect(oktaProvider.AuthenticationScheme, oktaProvider.DisplayName, (Action<OpenIdConnectOptions>)(options =>
             {
                 options.SignInScheme = "idsrv.external";
-                options.ClientId = ids4DemoProvider.ClientId;
-                options.Authority = "https://demo.identityserver.io/";
-                options.MetadataAddress = ids4DemoProvider.MetadataAddress;
+                options.ClientId = oktaProvider.ClientId;
+                options.ClientSecret = oktaProvider.ClientSecret;
+                options.Authority = oktaProvider.Authority;
                 options.CallbackPath = "/signin-idsrv";
                 options.Events.OnRedirectToIdentityProvider += (Func<RedirectContext, Task>)(context =>
                 {
-                    Claim first = context.HttpContext.User.FindFirst("idp");
-                    if (string.Equals(first != null ? first.Value : (string)null, ids4DemoProvider.AuthenticationScheme, StringComparison.Ordinal))
+                    var first = context.HttpContext.User.FindFirst("idp");
+                    if (string.Equals(first?.Value, oktaProvider.AuthenticationScheme, StringComparison.Ordinal))
                         context.ProtocolMessage.Prompt = "select_account";
                     return Task.CompletedTask;
                 });

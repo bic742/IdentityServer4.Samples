@@ -2,8 +2,8 @@
 {
     public class AppSettings
     {
-        public static readonly string SectionName = "Sitecore:ExternalIdentityProviders:IdentityProviders:Ids4Demo";
+        public static readonly string SectionName = "Sitecore:ExternalIdentityProviders:IdentityProviders:Okta";
 
-        public Ids4DemoIdentityProvider Ids4DemoIdentityProvider { get; set; } = new Ids4DemoIdentityProvider();
+        public OktaIdentityProvider OktaIdentityProvider { get; set; } = new OktaIdentityProvider();
     }
 }
